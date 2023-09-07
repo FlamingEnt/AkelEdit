@@ -24,7 +24,7 @@ set(HEADERS
 )
 
 add_library(AkelEdit
-  SHARED
+  STATIC
   ${SOURCES}
 )
 
