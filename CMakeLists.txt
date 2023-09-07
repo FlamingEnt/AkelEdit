@@ -1,18 +1,10 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(AkelEdit)
 
-if("${CMAKE_GENERATOR_PLATFORM}" STREQUAL "")
-  set(TARGET_ARCH ${CMAKE_HOST_SYSTEM_PROCESSOR})
-else()
-  set(TARGET_ARCH ${CMAKE_GENERATOR_PLATFORM})
-endif()
-
-if("${TARGET_ARCH}" STREQUAL "x86" OR "${TARGET_ARCH}" STREQUAL "Win32")
-  set(BIT "32")
-elseif("${TARGET_ARCH}" STREQUAL "x64" OR "${TARGET_ARCH}" STREQUAL "Win64" OR "${TARGET_ARCH}" STREQUAL "AMD64")
+if(CMAKE_SIZEOF_VOID_P MATCHES "8")
   set(BIT "64")
 else()
-  message(FATAL_ERROR "Unsupported target architecture: ${TARGET_ARCH}")
+  set(BIT "32")
 endif()
 
 add_compile_definitions(RC_AKELEDITBIT=${BIT})
