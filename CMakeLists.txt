@@ -24,7 +24,7 @@ set(HEADERS
 )
 
 add_library(AkelEdit
-  STATIC
+  SHARED
   ${SOURCES}
 )
 
@@ -38,4 +38,9 @@ target_link_libraries(AkelEdit
   imm32
   ole32
   gdi32
+)
+
+install(TARGETS AkelEdit
+  RUNTIME DESTINATION ${UNREAL_BIN_PATH}
+  LIBRARY DESTINATION ${UNREAL_BIN_PATH}
 )
