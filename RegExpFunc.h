@@ -1,7 +1,7 @@
 /******************************************************************
  *                  RegExp functions header v2.5                  *
  *                                                                *
- * 2020 Shengalts Aleksander aka Instructor (Shengalts@mail.ru)   *
+ * 2023 Shengalts Aleksander aka Instructor (Shengalts@mail.ru)   *
  *                                                                *
  *                                                                *
  * RegExpFunc.h header uses functions:                            *
@@ -1049,7 +1049,7 @@ BOOL PatExec(STACKREGROUP *hStack, REGROUP *lpREGroupItem, const wchar_t *wpStr,
   REGROUP *lpREGroupNextNext;
   REGROUP *lpREGroupRef;
   REGROUP *lpREGroupOrMatch;
-  const wchar_t *wpPat=NULL;
+  const wchar_t *wpPat;
   const wchar_t *wpMaxPat=lpREGroupItem->wpPatEnd;
   const wchar_t *wpPatChar=NULL;
   const wchar_t *wpMinStr=wpStr;
@@ -2381,7 +2381,7 @@ BOOL AE_PatExec(STACKREGROUP *hStack, REGROUP *lpREGroupItem, AECHARINDEX *ciInp
   AECHARINDEX ciGreedyStrEnd;
   AECHARINDEX ciBackupStrStart;
   AECHARINDEX ciBackupStrEnd;
-  const wchar_t *wpPat=NULL;
+  const wchar_t *wpPat;
   const wchar_t *wpMaxPat=lpREGroupItem->wpPatEnd;
   const wchar_t *wpPatChar=NULL;
   const wchar_t *wpNextGroup;

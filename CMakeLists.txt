@@ -7,7 +7,12 @@ else()
   set(BIT "32")
 endif()
 
-add_compile_definitions(RC_AKELEDITBIT=${BIT})
+add_compile_definitions(RC_AKELEDITBIT=${BIT
+add_compile_definitions(BIT=${BIT})
+
+if (MSVC)
+  add_compile_options(/Wall /WX /wd4100 /wd4201 /wd4204 /wd4255 /wd4310 /wd4619 /wd4668 /wd4701 /wd4706 /wd4711 /wd4820 /wd4826)
+endif()
 
 set(SOURCES
   "AkelEdit.c"
@@ -26,11 +31,6 @@ set(HEADERS
 add_library(AkelEdit
   SHARED
   ${SOURCES}
-)
-
-set_target_properties(AkelEdit
-  PROPERTIES
-  PUBLIC_HEADER "${HEADERS}"
 )
 
 target_link_libraries(AkelEdit

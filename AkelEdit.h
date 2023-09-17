@@ -1,8 +1,6 @@
 #ifndef __AKELEDIT_H__
 #define __AKELEDIT_H__
 
-#pragma warning(disable:4706) // assignment within conditional expression
-
 
 //// Includes
 
