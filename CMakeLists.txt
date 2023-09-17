@@ -7,10 +7,10 @@ else()
   set(BIT "32")
 endif()
 
-add_compile_definitions(RC_AKELEDITBIT=${BIT
+add_compile_definitions(RC_AKELEDITBIT=${BIT)
 add_compile_definitions(BIT=${BIT})
 
-if (MSVC)
+if(MSVC)
   add_compile_options(/Wall /WX /wd4100 /wd4201 /wd4204 /wd4255 /wd4310 /wd4619 /wd4668 /wd4701 /wd4706 /wd4711 /wd4820 /wd4826)
 endif()
 
