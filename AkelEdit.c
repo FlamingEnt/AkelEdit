@@ -35,6 +35,7 @@
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#include <VersionHelpers.h>
 #include <stddef.h>
 #include <imm.h>
 #include "StackFunc.h"
@@ -286,11 +287,7 @@ void AE_RegisterClassCommon(HINSTANCE hInstance)
   //Is Windows 95/98/Me?
   if (bAkelEditWindows9x == -1)
   {
-    OSVERSIONINFO ovi;
-
-    ovi.dwOSVersionInfoSize=sizeof(OSVERSIONINFO);
-    GetVersionEx(&ovi);
-    if (ovi.dwPlatformId == VER_PLATFORM_WIN32_WINDOWS)
+    if (!IsWindowsXPOrGreater())
       bAkelEditWindows9x=TRUE;
     else
       bAkelEditWindows9x=FALSE;
