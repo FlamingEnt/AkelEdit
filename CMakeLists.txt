@@ -7,7 +7,7 @@ else()
   set(BIT "32")
 endif()
 
-add_compile_definitions(RC_AKELEDITBIT=${BIT)
+add_compile_definitions(RC_AKELEDITBIT=${BIT})
 add_compile_definitions(BIT=${BIT})
 
 if(MSVC)
